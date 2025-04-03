@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'com.example'
@@ -10,9 +11,19 @@ repositories {
 }
 
 dependencies {
-    // Add your project dependencies here
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = 'com.example.StudentAdmissionCLI'
+}
+
+// Allow standard input for Gradle run
+run {
+    standardInput = System.in
 }
