@@ -33,6 +33,11 @@ public class StudentAdmissionCLI {
             System.out.println("3. Search Student by ID");
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
+              if (!scanner.hasNextInt()) {  // Prevents NoSuchElementException
+                    System.out.println("Invalid input! Please enter a number.");
+                    scanner.next();  // Consume the invalid input
+                    continue;
+                }
             int choice = scanner.nextInt();
             scanner.nextLine();
             
