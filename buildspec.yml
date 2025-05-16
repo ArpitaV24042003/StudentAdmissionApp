@@ -19,3 +19,4 @@ test:
   commands:
     - echo Running tests...
     - gradle test
+    - maven test
