@@ -1,22 +1,22 @@
 version: 0.2
+
 phases:
   install:
+    runtime-versions:
+      java: corretto17
     commands:
-      - echo Installing dependencies
+      - echo Installing dependencies...
       - mvn install
+
   build:
     commands:
-      - echo Building the project
-      - mvn package
+      - echo Building the project and running tests...
+      - mvn clean package
+
   post_build:
     commands:
-      - echo Running Unit Tests
-      - mvn test
+      - echo Build and test completed successfully.
+
 artifacts:
   files:
     - target/*.jar
-test:
-  commands:
-    - echo Running tests...
-    - gradle test
-    - maven test
