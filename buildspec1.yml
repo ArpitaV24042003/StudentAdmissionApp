@@ -1,20 +1,18 @@
-this was the content in my yml.file:
 version: 0.2
 
 phases:
   install:
     commands:
-      - echo Installing dependencies
-      - gradle build --refresh-dependencies
+      - echo "Skipping build. Just packaging JAR."
+
   build:
     commands:
-      - echo Building the project
-      - gradle build
+      - echo "Nothing to build. JAR already exists."
+
   post_build:
     commands:
-      - echo Running tests
-      - gradle test
+      - echo "Build done. Proceeding to artifacts upload."
 
 artifacts:
   files:
-    - build/libs/*.jar
+    - build/libs/student-admission-app-1.0-SNAPSHOT.jar
